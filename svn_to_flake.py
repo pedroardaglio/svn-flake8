@@ -16,8 +16,7 @@ for line in svn_lines:
         if file_ext in line:
             # We need to remove all junk from this line.
             # From SVN, the seven first characters/column of each line are
-            # the file statuses, plus one to separate them from the path file,
-            # so we take them off
+            # the file statuses, plus one to separate them from the path file
             line_clean = line[8:]
 
             # We also remove '\n' if it is at the end of the line
