@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+from flake8.main import application
 
 PYTHON_FILE_EXTENSIONS = [
     '.py'
@@ -20,8 +21,10 @@ for line in svn_lines:
             line_clean = line[8:]
 
             # We also remove '\n' if it is at the end of the line
-            line_clean = line.replace('\n', '')
+            line_clean = line_clean.replace('\n', '')
 
             python_files.append(line_clean)
 
-print python_files
+app = application.Application()
+app.run(python_files)
+app.exit()
